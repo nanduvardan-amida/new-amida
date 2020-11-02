@@ -1,0 +1,24 @@
+@base-url = http://localhost:8080/fhir/
+
+# Get the conformance statement
+GET {{base-url}}metadata
+
+###
+# Get a patient
+GET {{base-url}}Patient/1?_format=json
+
+###
+# Get a list of patients by family name
+GET {{base-url}}Patient?family=Jetson&_format=json
+###
+# Get a procedure
+GET {{base-url}}Procedure/2?_format=json
+
+###
+# Get an EOB
+GET {{base-url}}ExplanationOfBenefit/3?_format=json
+
+###
+# Get a condition
+GET {{base-url}}Condition/4?_format=json
+

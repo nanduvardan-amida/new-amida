@@ -1,0 +1,24 @@
+version: '3.5'
+
+services:
+  cnsi-fhir-rest:
+    image: amidatech/cnsi-fhir-rest:latest
+    container_name: cnsi-fhir-rest
+    ports:
+    - 8080:8080
+    environment:
+    - fhirworx.jwksEndpoint = https://cognito-idp.us-west-2.amazonaws.com/us-west-2_0iOl5Gdbh/.well-known/jwks.json
+    - fhirworx.userInfoEndpoint=https://cnsi-demo-auth-server.auth.us-west-2.amazoncognito.com/oauth2/userInfo
+    - fhirworx.dataEndpoint=http://cnsi-mock-fuze-adapter:8081/fuzeResourceAdapter
+    - fhirworx.enableAuth=false
+
+  cnsi-mock-fuze-adapter:
+    image: amidatech/cnsi-mock-fuze-adapter:latest
+    container_name: cnsi-mock-fuze-adapter
+    ports:
+    - 8081:8081
+
+networks:
+  default:
+    external:
+      name: ${DOCKER_NETWORK:-fhirworx}
