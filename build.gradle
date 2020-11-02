@@ -41,6 +41,7 @@ dependencies {
     implementation 'ca.uhn.hapi.fhir:hapi-fhir-structures-r4:5.1.0'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.5
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
