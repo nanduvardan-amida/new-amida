@@ -5,7 +5,7 @@ plugins {
 	id 'eclipse'
 	id 'jacoco'
 	id 'com.adarshr.test-logger' version '2.1.0'
-	id "org.sonarqube" version "7.9.3"
+	id "org.sonarqube" version "3.0"
 }
 
 group = 'com.fhirworx'
